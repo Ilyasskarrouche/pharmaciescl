@@ -1,21 +1,36 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import L from "leaflet";
 import "leaflet-routing-machine";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 import { useMap } from "react-leaflet";
 
-const LeafletRoutingMachine = () => {
+const LeafletRoutingMachine = (props) => {
   const map = useMap();
+  const [lat, setLat] = useState(0);
+  const [log, setLog] = useState(0);
+  navigator.geolocation.getCurrentPosition(
+    function success(position) {
+        console.log(position.coords.latitude, position.coords.longitude);
+        setLat(position.coords.latitude)
+        setLog(position.coords.longitude)
+        console.log("Latitude 1 : " + lat)
+        console.log("Longitude 1 : " + log)
+    },
+    function error(error) {
+        console.error(error);
+    }
+);
   let DefaultIcon = L.icon({
     iconUrl: require("../../src/marker.png"),
-    iconSize: [90, 90],
+    iconSize: [50, 50],
   });
-  useEffect(() => {
-    
-    map.on("click", function (e) {
+
+   
+   map.on("click", function (e) {
+      L.marker([e.latlng.lat, e.latlng.lng], {icon: DefaultIcon}).addTo(map)
       L.Routing.control({
         waypoints: [
-          L.latLng(36.8065, 10.1815),
+          L.latLng(lat, log),
           L.latLng(e.latlng.lat, e.latlng.lng),
         ],
         lineOptions: {
@@ -30,7 +45,7 @@ const LeafletRoutingMachine = () => {
       })
         .addTo(map);
     });
-  }, []);
+  
   return null;
 };
 

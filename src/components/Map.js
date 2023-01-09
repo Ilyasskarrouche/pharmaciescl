@@ -91,7 +91,7 @@ function MapFiltre(props) {
             }
 
 
-         <LeafletRoutingMachine/>
+         <LeafletRoutingMachine position={[lat, log]}/>
         </LeafletMap>
 
     )
