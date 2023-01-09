@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# LOCALISATION DES PHARMACIES
+Le projet de localisation des pharmacies vise à créer une interface en ligne permettant aux utilisateurs de trouver facilement les pharmacies en fonction de leurs villes et leurs zones ainsi que les gardes disponibles.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pour la partie front-end, nous utilisons Ajax, JQuery et ReactJS pour fournir une expérience utilisateur fluide et interactive. Lorsqu'un utilisateur entre une ville et une zone en specifiant le type de garde, nous utilisons Ajax pour envoyer une requête HTTP au serveur et récupérer les données de localisation des pharmacies sans avoir à recharger la page. JQuery est utilisé pour traiter ces données et mettre à jour la page avec les résultats de la recherche. ReactJS nous permet de rendre l'interface utilisateur de manière efficace en ne mettant à jour que les parties de la page qui ont changé .
 
-## Available Scripts
+Pour la partie back-end, nous utilisons Spring Boot pour gérer les requêtes HTTP et accéder à la base de données de pharmacies. Spring Boot fournit également un certain nombre d'outils pour faciliter le développement et la maintenance du projet, tels que l'injection de dépendances et la gestion des erreurs. Nous utilisons également Hibernate pour la gestion de la base de données et l'accès aux données de localisation des pharmacies.
 
-In the project directory, you can run:
+# Fonctionalités
+Internaute (Sans authentification) : (React JS / Angular / Vue JS)
+• Chercher une pharmacie par ville et zone
+• Visualiser les pharmacies dans une Map
+• Visualiser la position de l’utilisateur dans la map et mentionner la pharmacie la plus proche
+• Filtrer la recherche selon le type de la garde
+• Afficher l’itinéraire vers une pharmac
 
-### `npm start`
+# Architecture
+Front-end :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Pour l'administrateur et le pharmacien :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Utilisation de AJAX et de jQuery pour la gestion des événements et des interactions avec le serveur et la mise à jour de l'interface utilisateur de manière asynchrone.
 
-### `npm test`
+Pour le client :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Utilisation de ReactJS pour la création de composants réutilisables et la gestion de l'état de l'application.
 
-### `npm run build`
+Back-end :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Utilisation de Spring Boot comme framework de développement pour la couche de backend, qui permet de simplifier la configuration et le déploiement de l'application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Base de données :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Utilisation de MySQL comme système de gestion de base de données relationnelles pour stocker les données de l'application, comme les informations sur les clients, les médicaments, etc.
+Voici comment cela pourrait fonctionner en termes de flux de données :
 
-### `npm run eject`
+L'utilisateur de l'administrateur ou du pharmacien envoie une requête en utilisant une interface Web basée sur AJAX et jQuery.
+La requête est envoyée au serveur Spring Boot via un contrôleur REST.
+Le contrôleur interroge la base de données MySQL et obtient les données requises.
+Les données sont envoyées de retour à l'interface utilisateur de l'administrateur ou du pharmacien en utilisant AJAX.
+L'utilisateur du client envoie une requête en utilisant une interface Web basée sur ReactJS.
+La requête est envoyée au serveur Spring Boot via un contrôleur REST.
+Le contrôleur interroge la base de données MySQL et obtient les données requises.
+Les données sont envoyées de retour à l'interface utilisateur du client en utilisant ReactJS pour mettre à jour l'état de l'application et afficher les données dans l'interface utilisateur.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![App Screenshot](https://github.com/Ilyasskarrouche/hh/blob/master/a.jpeg?raw=true)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Installation
 
-## Learn More
+Assurez-vous d'avoir une version récente de Node.js et de npm (le gestionnaire de paquets Node.js) installée sur votre ordinateur.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Téléchargez ou clonez le code source du projet depuis son dépôt Git ou téléchargez-le sous forme de fichier archive.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Ouvrez une fenêtre de terminal et accédez au répertoire racine du projet.
 
-### Code Splitting
+Exécutez la commande npm install pour installer toutes les dépendances du projet.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Exécutez la commande npm run build pour générer une version optimisée de votre application React.js, qui sera placée dans un répertoire build à la racine de votre projet.
 
-### Analyzing the Bundle Size
+Utilisez un outil de déploiement de votre choix pour déployer le contenu du répertoire build sur votre serveur de production. Si vous n'avez pas d'outil de déploiement, vous pouvez utiliser un service de hosting web tel que GitHub Pages ou AWS Amplify.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Assurez-vous de configurer votre serveur de production pour servir le contenu statique de votre application à partir du répertoire build. Si vous utilisez un serveur web comme Apache ou Nginx, vous devrez configurer un virtual host pour votre application.
 
-### Making a Progressive Web App
+# Auteurs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Karrouche Ilyass
 
-### Advanced Configuration
+Housni Zakaria 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Zakaria sehoui
