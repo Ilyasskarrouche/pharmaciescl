@@ -7,11 +7,16 @@ Pour la partie back-end, nous utilisons Spring Boot pour gérer les requêtes HT
 
 # Fonctionalités
 Internaute (Sans authentification) : (React JS / Angular / Vue JS)
+
 • Chercher une pharmacie par ville et zone
+
 • Visualiser les pharmacies dans une Map
+
 • Visualiser la position de l’utilisateur dans la map et mentionner la pharmacie la plus proche
+
 • Filtrer la recherche selon le type de la garde
-• Afficher l’itinéraire vers une pharmac
+
+• Afficher l’itinéraire vers une pharmacie
 
 # Architecture
 Front-end :
